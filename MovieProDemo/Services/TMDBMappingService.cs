@@ -1,4 +1,5 @@
-﻿using MovieProDemo.Enums;
+﻿using Microsoft.Extensions.Options;
+using MovieProDemo.Enums;
 using MovieProDemo.Models.Database;
 using MovieProDemo.Models.Settings;
 using MovieProDemo.Models.TMDB;
@@ -15,9 +16,9 @@ namespace MovieProDemo.Services
         private AppSettings _appSettings;
         private readonly IImageService _imageService;
 
-        public TMDBMappingService(AppSettings appSettings, IImageService imageService)
+        public TMDBMappingService(IOptions<AppSettings> appSettings, IImageService imageService)
         {
-            _appSettings = appSettings;
+            _appSettings = appSettings.Value;
             _imageService = imageService;
         }
 
