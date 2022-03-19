@@ -44,7 +44,7 @@ namespace MovieProDemo.Controllers
             };
 
 
-            return View();
+            return View(data);
         }
 
         public IActionResult Privacy()
